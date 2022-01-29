@@ -36,7 +36,7 @@ function gonder(x) {
   allStreets = x.map((item) => item.street);
   console.log("Street Names :>> ", allStreets);
 
-  var mySelect = document.getElementById("sokak");
+  var mySelect = document.getElementById("street");
 
   function removeOptions(selectElement) {
     var i, L = selectElement.options.length - 1;

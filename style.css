@@ -1,3 +1,6 @@
-label{
+/* label{
     margin-right: 1rem;
+} */
+#city{
+    pointer-events:none;
 }
