@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
-    <!-- <script type="module" src="my-element.js"></script> -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +11,7 @@
     <title>Adress Finder</title>
   </head>
   <body>
-    <section class="contact-form">
+    <section class="contact-form border  m-5">
       <div class="card-header">
         Adresse:
       </div>
@@ -59,18 +57,15 @@
           </div>
           <input type="text" value= "Deutschland"class="form-control" id="country"  name="land" aria-describedby="basic-addon1"  readonly>
         </div>
-        <button type="submit" class="btn btn-secondary btn-sm btn-block " id="info">INFO</button>
-        
+        <div class="text-center">
+          <button type="submit" class="btn btn-info btn-sm  " id="info">Info</button>
+        </div>
         <br>
       </div>
     </form>
   </section>
-  <div class="btn-group-toggle" data-toggle="buttons">
-    <button onclick= "sendResponse()" type="button" class="btn btn-primary btn-sm btn-block ">Send Request</button>
-  </div>
-
-    <div class="results">
-      <h2>Form Data</h2>
+  
+    <div class="results text-center">
       <pre></pre>
     </div>
  

@@ -1,7 +1,7 @@
-// window.onload = function(){
-//   const el = document.getElementById("zip");
-//   el.addEventListener("keyup", sendResponse);
-// }
+window.onload = function(){
+  const el = document.getElementById("zip");
+  el.addEventListener("change", sendResponse);
+}
 
 function sendResponse() {
   var x = document.getElementById("zip").value;
@@ -11,25 +11,20 @@ function sendResponse() {
   let data2 = `finda=streets&plz_plz="${x}"&lang=de_DE`;
 
   let url =
-    "https://cors-anywhere.herokuapp.com/https://www.postdirekt.de/plzserver/PlzAjaxServlet?nocache=1643465311213";
+    "https://cors-anywhere.herokuapp.com/https://www.postdirekt.de/plzserver/PlzAjaxServlet?";
 
   axios
     .all([axios.post(url, data), axios.post(url, data2)])
 
     .then(
-      axios.spread((veri1, veri2) => {
-        document.getElementById("city").value = veri1.data.rows[0].city;
-        gonder(veri2.data.rows);
+      axios.spread((spreadData1, spreadData2) => {
+        document.getElementById("city").value = spreadData1.data.rows[0].city;
+        gonder(spreadData2.data.rows);
       })
     )
-    //   // .then(response => document.getElementById("street").value = response.data.rows.map(item => {return item.street}))
-    //   // .then(response => allStreets = response.data.rows.map(item => {return item.street}))
-
     .catch((error) => {
       console.error("There was an error!", error);
     });
-  // axios.get('https://breakingbadapi.com/api/characters')
-  //   .then((res) => gonder(res.data))
 }
 
 function gonder(x) {
@@ -56,20 +51,12 @@ function gonder(x) {
 }
 
 
-// **********************
-// document.getElementById("info").onclick = function() {formatJson()};
-
 
 function handleFormSubmit(event) {
   event.preventDefault();
   
   const data = new FormData(event.target);
-  
   const formJSON = Object.fromEntries(data.entries());
-
-  // // for multi-selects, we need special handling
-  // formJSON.snacks = data.getAll('snacks');
-  
   const results = document.querySelector('.results pre');
   results.innerText = JSON.stringify(formJSON, null, 2);
 }
