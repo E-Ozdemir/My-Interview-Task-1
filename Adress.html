@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   
-    
+    <!-- <script type="module" src="my-element.js"></script> -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@
     <div class="container p-5">
         <h5>Adresse</h5>
         <div class="d-flex m-3">
-            <!-- <button onclick= "myFunction()">Button</button> -->
+            <button onclick= "sendResponse()">Button</button>
             <label for="" class="form-label" >PLZ</label>
             <input type="text" class="form-control" id="zip"/>
           
@@ -29,7 +29,9 @@
         </div>
         <div class="d-flex m-3">
           <label for="" class="form-label">Straße</label>
-          <input type="text" class="form-control" id="street"/>
+          <select class="form-select" id="sokak" aria-label="Default select example" >
+            
+          </select>
 
           <label for="" class="form-label">Hausnummer</label>
           <input type="text" class="form-control" id="houseNumber"/>
@@ -39,6 +41,7 @@
           <label for="" class="form-label">Land</label>
           <input type="text" class="form-control" value="Deutschland" id="country" readonly/>
         </div>
+        <my-element></my-element>
     </div>
     
 
