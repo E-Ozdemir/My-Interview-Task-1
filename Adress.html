@@ -13,24 +13,25 @@
     <title>Adress Finder</title>
   </head>
   <body>
-    <div class="card m-5">
+    <section class="contact-form">
       <div class="card-header">
         Adresse:
       </div>
+      <form>
       <div class="card-body">
         <div class="d-flex m-3">
           <div class="input-group mb-3 mr-5">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">PLZ</span>
             </div>
-            <input type="text" class="form-control" id="zip"  aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id="zip"  aria-describedby="basic-addon1" name="zip">
           </div>
           
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Stadt</span>
             </div>
-            <input type="text" class="form-control" id="city"  aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id="city"  aria-describedby="basic-addon1" name="stadt">
           </div>
           
         </div>
@@ -39,7 +40,7 @@
             <div class="input-group-prepend">
               <label class="input-group-text" for="street">Straße</label>
             </div>
-            <select class="custom-select" id="street">
+            <select class="custom-select" id="street" name="straße">
               <option selected>Choose...</option>
             </select>
           </div>
@@ -48,7 +49,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Hausnummer</span>
             </div>
-            <input type="text" class="form-control" id="homeNumber" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id="homeNumber" aria-describedby="basic-addon1" name="hausnummer">
           </div>
         </div>
 
@@ -56,16 +57,21 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Land</span>
           </div>
-          <input type="text" value= "Deutschland"class="form-control" id="country" aria-describedby="basic-addon1" readonly>
+          <input type="text" value= "Deutschland"class="form-control" id="country"  name="land" aria-describedby="basic-addon1"  readonly>
         </div>
-        <div class="btn-group-toggle" data-toggle="buttons">
-          <button type="button" class="btn btn-secondary btn-sm btn-block ">Convert to JSON</button>
-        </div>
+        <button type="submit" class="btn btn-secondary btn-sm btn-block " id="info">INFO</button>
+        
         <br>
-        <div class="btn-group-toggle" data-toggle="buttons">
-          <button onclick= "sendResponse()" type="button" class="btn btn-primary btn-sm btn-block ">Send Request</button>
-        </div>
       </div>
+    </form>
+  </section>
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <button onclick= "sendResponse()" type="button" class="btn btn-primary btn-sm btn-block ">Send Request</button>
+  </div>
+
+    <div class="results">
+      <h2>Form Data</h2>
+      <pre></pre>
     </div>
  
 
