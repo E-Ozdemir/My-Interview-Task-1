@@ -20,6 +20,7 @@ function sendResponse() {
       axios.spread((spreadData1, spreadData2) => {
         document.getElementById("city").value = spreadData1.data.rows[0].city;
         gonder(spreadData2.data.rows);
+        credentials: 'include'
       })
     )
     .catch((error) => {
